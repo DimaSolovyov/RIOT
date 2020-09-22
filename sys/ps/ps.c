@@ -103,7 +103,7 @@ void ps(void)
     void *isr_start = thread_isr_stack_start();
     void *isr_sp = thread_isr_stack_pointer();
     printf("\t  - | isr_stack            | -        - |"
-           "   - | %6i (%5i) (%5i) | %10p | %10p\n",
+           "   - | %6i (%5i) (%5i) | %10p | %10p\n\r",
            ISR_STACKSIZE, isr_usage, ISR_STACKSIZE - isr_usage,
            isr_start, isr_sp);
     overall_stacksz += ISR_STACKSIZE;

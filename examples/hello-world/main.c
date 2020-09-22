@@ -18,15 +18,52 @@
  *
  * @}
  */
-
 #include <stdio.h>
+#include "board.h"
+#include "shell.h"
+
+static int toogle(int argc, char **argv)
+{   
+    if (argc != 2) {
+        printf("Usage: toggle <led num>\n\r");
+        return 1;
+    }
+    switch (*argv[1])
+    {
+    case '0':{
+       
+        LED0_TOGGLE;
+        break;
+    }
+    case '1':{
+
+        LED1_TOGGLE;
+        break;
+    }
+    case '2':{
+        LED2_TOGGLE;
+        break;
+    }
+
+    default:{
+        printf("do not exist\n\r");
+        break;
+        }
+        
+        
+    }
+    
+    return 0;
+}
+
+static const shell_command_t shell_commands[] = {
+    { "toogle", "my own command", toogle },
+    { NULL, NULL, NULL }
+};
 
 int main(void)
 {
-    puts("Hello World!");
-
-    printf("You are running RIOT on a(n) %s board.\n", RIOT_BOARD);
-    printf("This board features a(n) %s MCU.\n", RIOT_MCU);
-
-    return 0;
+    puts("RIOT application with shell");
+    char line_buf[SHELL_DEFAULT_BUFSIZE];
+    shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
 }
