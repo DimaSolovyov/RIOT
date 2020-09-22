@@ -18,7 +18,7 @@ static int Temperature(int argc, char **argv){
     printf("temperature %d,%d",valueTemperature/10,valueTemperature%10);
     return 0;
 }
-
+printf("temperature %d,%d",valueTemperature/10,valueTemperature%10);
 static const shell_command_t shell_commands[] = {
     { "Temperature", "Temperature", Temperature },
     { NULL, NULL, NULL }
