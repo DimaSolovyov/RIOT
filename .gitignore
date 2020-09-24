@@ -79,3 +79,4 @@ keys/
 
 # clangd language server
 .clangd/
+examples/hello-world/openocd

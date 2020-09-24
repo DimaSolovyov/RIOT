@@ -43,7 +43,7 @@ int main(void)
         puts("Failed to set one_shot power on");
         return -2;
     }
-    dima 
+
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
     
