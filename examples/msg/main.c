@@ -16,7 +16,7 @@ static void *thread_handler(void *arg)
     {   
         
         msg_receive(&messege);
-        printf("value %s",(char*)(messege.content.ptr));
+        printf("%s",(char*)(messege.content.ptr));
 
         
     }
